@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Details - RoboAdvisor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200/80 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 px-6 sm:px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">RoboAdvisor</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<nav class="hidden sm:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-bold text-primary" href="#">All Portfolios</a>
+</nav>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACt6PCv4A-mh3MW1EKbB1CBs-a3jfXkfZLVgzX64HPn83En0o6TnyVT4yA6othpSqOhykG-t4uOdNb3zKS5Kn5d3xNGu_tm1O0iXKtmvyrbBNcF9yxZlQXjrltKWrkxBOBFflgR7D4sDE82aVreOrxrnjH-WWdfl39f2ABHcoii2RFsws-sDNm31M5AkEmAGy_pZbnkAs3NIDggxSHTCTw0wkN2PGkzPSO9tYk-wv3YckhaY5J2x3PDjUs__pWHFm3B3jfnoLphvm3");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-4 sm:px-6 lg:px-8 py-8">
+<div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column -->
+<div class="lg:col-span-4 xl:col-span-3">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- PageHeading -->
+<div class="flex flex-col gap-3 rounded-xl bg-white dark:bg-white/5 p-6 border border-gray-200/80 dark:border-white/10">
+<p class="text-gray-900 dark:text-white text-2xl sm:text-3xl font-bold leading-tight tracking-[-0.03em]">Long-Term Growth Fund</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-normal leading-normal">Aggressive-risk portfolio focused on tech and emerging markets.</p>
+</div>
+<!-- ButtonGroup -->
+<div class="flex flex-col gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+<span class="truncate">Add New Asset</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-gray-200 dark:bg-white/10 text-gray-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-white/20 transition-colors">
+<span class="truncate">Rebalance Portfolio</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-gray-200 dark:bg-white/10 text-gray-800 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-white/20 transition-colors">
+<span class="truncate">Edit Portfolio Details</span>
+</button>
+</div>
+<!-- Stats -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-white/5 p-5 border border-gray-200/80 dark:border-white/10">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Total Value</p>
+<p class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">$152,830.45</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-white/5 p-5 border border-gray-200/80 dark:border-white/10">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Overall Gain/Loss</p>
+<p class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">+$18,340.12</p>
+<p class="text-green-600 dark:text-green-500 text-base font-medium leading-normal">+13.6%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-white/5 p-5 border border-gray-200/80 dark:border-white/10">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">24h Change</p>
+<p class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">-$2,105.77</p>
+<p class="text-red-600 dark:text-red-500 text-base font-medium leading-normal">-1.35%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column / Asset Table -->
+<div class="lg:col-span-8 xl:col-span-9">
+<div class="bg-white dark:bg-white/5 rounded-xl border border-gray-200/80 dark:border-white/10 overflow-hidden">
+<div class="p-4 sm:p-6 border-b border-gray-200/80 dark:border-white/10">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-gray-100 dark:bg-white/5 border-transparent focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Search for an asset..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gray-50 dark:bg-white/5">
+<tr>
+<th class="px-6 py-3 font-medium" scope="col">Asset Name</th>
+<th class="px-6 py-3 font-medium" scope="col">Ticker</th>
+<th class="px-6 py-3 font-medium" scope="col">Asset Class</th>
+<th class="px-6 py-3 font-medium text-right" scope="col">Shares</th>
+<th class="px-6 py-3 font-medium text-right" scope="col">Value</th>
+<th class="px-6 py-3 font-medium text-right" scope="col">% of Portfolio</th>
+<th class="px-6 py-3 font-medium text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200/80 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">Vanguard S&amp;P 500 ETF</th>
+<td class="px-6 py-4">VOO</td>
+<td class="px-6 py-4">US Equity</td>
+<td class="px-6 py-4 text-right">105.20</td>
+<td class="px-6 py-4 text-right font-semibold">$48,392.00</td>
+<td class="px-6 py-4 text-right">31.6%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-gray-200/80 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">iShares MSCI EAFE ETF</th>
+<td class="px-6 py-4">EFA</td>
+<td class="px-6 py-4">Int'l Equity</td>
+<td class="px-6 py-4 text-right">250.75</td>
+<td class="px-6 py-4 text-right font-semibold">$19,307.75</td>
+<td class="px-6 py-4 text-right">12.6%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-gray-200/80 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">Apple Inc.</th>
+<td class="px-6 py-4">AAPL</td>
+<td class="px-6 py-4">US Equity</td>
+<td class="px-6 py-4 text-right">80.00</td>
+<td class="px-6 py-4 text-right font-semibold">$15,280.00</td>
+<td class="px-6 py-4 text-right">10.0%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-gray-200/80 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">Vanguard Total Bond Market ETF</th>
+<td class="px-6 py-4">BND</td>
+<td class="px-6 py-4">Bonds</td>
+<td class="px-6 py-4 text-right">312.00</td>
+<td class="px-6 py-4 text-right font-semibold">$22,776.00</td>
+<td class="px-6 py-4 text-right">14.9%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-gray-200/80 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">Real Estate Select Sector SPDR Fund</th>
+<td class="px-6 py-4">XLRE</td>
+<td class="px-6 py-4">REITs</td>
+<td class="px-6 py-4 text-right">450.00</td>
+<td class="px-6 py-4 text-right font-semibold">$16,875.00</td>
+<td class="px-6 py-4 text-right">11.0%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<th class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap" scope="row">Schwab Value Advantage Money Fund</th>
+<td class="px-6 py-4">SWVXX</td>
+<td class="px-6 py-4">Cash</td>
+<td class="px-6 py-4 text-right">30199.70</td>
+<td class="px-6 py-4 text-right font-semibold">$30,199.70</td>
+<td class="px-6 py-4 text-right">19.8%</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-2">
+<button class="p-2 text-gray-500 hover:text-primary dark:hover:text-primary rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined text-base">edit</span></button>
+<button class="p-2 text-gray-500 hover:text-red-500 rounded-full hover:bg-red-500/10 transition-colors"><span class="material-symbols-outlined text-base">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
