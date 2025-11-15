@@ -1,16 +1,23 @@
 <script lang="ts">
-  import { getTradesForAsset } from '$lib/api';
-  import type { Trade } from '$lib/types';
+    import {page} from '$app/state';
+    import {getTradesForAsset} from '$lib/api';
+    import type {Trade} from '$lib/types';
+    import {currencyFormatter, dateFormatter, quantityFormatter} from "$lib/formatters.ts";
 
-  let trades = $state<Trade[]>([]);
+    let trades = $state<Trade[]>([]);
+  let assetId = $state<number>(0);
 
   $effect(() => {
-    // In a real app, you'd get the asset ID from the URL or a store
-    getTradesForAsset(1).then((data) => {
-      trades = data;
-    });
-  });
-</script>
+    const id = parseInt(page.params.asset_id, 10);
+    if (!isNaN(id)) {
+      assetId = id;
+      getTradesForAsset(assetId).then((data) => {
+        trades = data;
+      });
+    }
+  })
+
+  </script>
 
 <div class="max-w-7xl mx-auto">
   <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -38,7 +45,7 @@
         <tbody>
           {#each trades as trade (trade.id)}
             <tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-              <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{new Date(trade.trade_date).toLocaleDateString()}</td>
+              <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{dateFormatter(new Date(trade.trade_date))}</td>
               <td class="px-6 py-4">
                 <span
                   class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold {trade.trade_type === 'BUY'
@@ -48,9 +55,9 @@
                   {trade.trade_type}
                 </span>
               </td>
-              <td class="px-6 py-4 text-right">{trade.quantity}</td>
-              <td class="px-6 py-4 text-right">${trade.price.toFixed(2)}</td>
-              <td class="px-6 py-4 text-right">${(trade.quantity * trade.price).toFixed(2)}</td>
+              <td class="px-6 py-4 text-right">{quantityFormatter(trade.quantity)}</td>
+              <td class="px-6 py-4 text-right">{currencyFormatter(trade.price)}</td>
+              <td class="px-6 py-4 text-right">{currencyFormatter(trade.quantity * trade.price)}</td>
             </tr>
           {/each}
         </tbody>

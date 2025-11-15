@@ -47,6 +47,9 @@
               <td class="h-[72px] px-6 py-2 w-[20%] text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">{asset.symbol}</td>
               <td class="h-[72px] px-6 py-2 w-[20%] text-sm font-bold leading-normal tracking-[0.015em]">
                 <div class="flex justify-end gap-2">
+                  <a href="/trades/{asset.id}" class="flex items-center justify-center rounded-lg h-9 px-4 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700/50 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
+                    <span class="material-symbols-outlined text-lg">receipt_long</span>
+                  </a>
                   <button class="flex items-center justify-center rounded-lg h-9 w-9 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700/50 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
                     <span class="material-symbols-outlined text-lg">edit</span>
                   </button>

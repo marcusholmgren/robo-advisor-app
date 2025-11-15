@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getPortfolios } from '$lib/api';
   import type { Portfolio } from '$lib/types';
+  import {currencyFormatter, dateFormatter, percentageFormatter} from "$lib/formatters.ts";
 
   let portfolios = $state<Portfolio[]>([]);
 
@@ -42,14 +43,16 @@
         <tbody>
           {#if portfolios.length > 0}
             {#each portfolios as portfolio (portfolio.id)}
-              <tr class="border-t border-t-gray-200 dark:border-t-white/20">
+              <tr class="border-t border-t-gray-200 dark:border-t-white/20 bg-white dark:bg-gray-800">
                 <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-gray-900 dark:text-white">{portfolio.name}</td>
-                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">$0.00</td>
-                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-teal-600 dark:text-teal-400">+$0.00 (+0.0%)</td>
-                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
-                  <span class="inline-flex items-center justify-center rounded-md bg-red-100 px-2.5 py-1 text-xs font-medium text-red-700 dark:bg-red-900/40 dark:text-red-300">N/A</span>
+                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">{currencyFormatter(portfolio.total_portfolio_value ?? 0)}</td>
+                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal {portfolio.total_unrealized_pnl && portfolio.total_unrealized_pnl > 0 ? 'text-teal-600 dark:text-teal-400' : 'text-red-600 dark:text-red-400'}">
+                  {currencyFormatter(portfolio.total_unrealized_pnl ?? 0) ?? 'N/A'}
+                  ({percentageFormatter(portfolio.total_unrealized_pnl_pct ?? 0) ?? 'N/A'})
                 </td>
-                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">{new Date(portfolio.updated_at).toLocaleDateString()}</td>
+                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                  <span class="inline-flex items-center justify-center rounded-md bg-red-100 px-2.5 py-1 text-xs font-medium text-red-700 dark:bg-red-900/40 dark:text-red-300">{portfolio.risk_level ?? 'N/A'}</span>
+                </td>                <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">{dateFormatter(new Date(portfolio.updated_at))}</td>
                 <td class="h-[72px] px-4 py-2 text-sm font-bold leading-normal tracking-[0.015em]">
                   <div class="flex items-center gap-2">
                     <a class="text-primary hover:underline" href="/portfolio/{portfolio.id}">View Details</a>

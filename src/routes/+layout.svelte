@@ -7,6 +7,11 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<style>
+		:root {
+			--primary-color: #1173d4;
+		}
+	</style>
 </svelte:head>
 
 <div class="relative flex min-h-screen w-full flex-col">
@@ -31,7 +36,6 @@
 		<nav class="flex items-center gap-6">
 			<a href="/portfolio" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Portfolio</a>
 			<a href="/assets" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Assets</a>
-			<a href="/trades" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Trades</a>
 		</nav>
 	</header>
 	<main class="flex-1 p-4 sm:p-6 md:p-8">
